@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.gallery-container {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+header {
+  background: linear-gradient(135deg, #512da8, #2196f3);
+  color: white;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+.filter-buttons {
+  margin: 30px 10px;
+}
+
+.filter-buttons button {
+  padding: 12px 25px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  background: #ddd;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active {
+  background: #512da8;
+  color: white;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 20px 5%;
+}
+
+.image-card {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px #ccc;
+  transition: 0.3s;
+}
+
+.image-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.image-card h3 {
+  margin: 12px;
+  color: #333;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  padding: 20px;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+.modal h2 {
+  color: white;
+  margin-top: 15px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  background: #222;
+  color: white;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+}
